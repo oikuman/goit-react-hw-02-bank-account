@@ -1,0 +1,37 @@
+import React from "react";
+import PropTypes from "prop-types";
+
+const TransactionLines = ({ transactions }) => {
+    return transactions.map(({ id, type, amount, date }) => (
+        <tr key={id}>
+            <td>{type}</td>
+            <td>{amount}$</td>
+            <td>{date}</td>
+        </tr>
+    ));
+};
+
+const TransactionHistory = ({ transactions }) => (
+    <table className="history">
+        <thead>
+            <tr>
+                <th>Transaction</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <TransactionLines transactions={transactions} />
+        </tbody>
+    </table>
+);
+
+TransactionLines.defaultProps = {
+    transactions: []
+};
+
+TransactionLines.propTypes = {
+    transactions: PropTypes.array
+};
+
+export default TransactionHistory;
