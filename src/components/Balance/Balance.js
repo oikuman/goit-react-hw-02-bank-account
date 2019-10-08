@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+import css from './Balance.module.css';
 
 const Balance = ({ income, expense, balance }) => (
-    <section className="balance">
+    <section className={css.balance}>
         <span>
             <span role="img" aria-label="arrow-up">
                 ⬆️

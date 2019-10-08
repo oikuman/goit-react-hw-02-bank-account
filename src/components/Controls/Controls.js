@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
+import css from './Controls.module.css';
 
 const Controls = ({ handleDeposit, handleWithdraw }) => (
-    <section className="controls">
+    <section className={css.controls}>
         <input type="number" min="0" name="amount" />
-        <button onClick={e => handleDeposit(e)} type="button">
+        <button onClick={e => handleDeposit(e)} type="button" className={css.button}>
             Deposit
         </button>
-        <button onClick={e => handleWithdraw(e)} type="button">
+        <button onClick={e => handleWithdraw(e)} type="button" className={css.button}>
             Withdraw
         </button>
     </section>

@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Controls from "../Controls";
 import Balance from "../Balance";
 import TransactionHistory from "../TransactionHistory";
+import css from './Dashboard.module.css';
 
 class Dashboard extends Component {
     state = {
@@ -69,7 +70,7 @@ class Dashboard extends Component {
     render() {
         const { income, expense, balance, transactions } = this.state;
         return (
-            <div className="dashboard">
+            <div className={css.dashboard}>
                 <Controls
                     handleDeposit={this.handleDeposit}
                     handleWithdraw={this.handleWithdraw}
